@@ -27,6 +27,7 @@ gulp.task('server-js', () => {
 
 gulp.task('style', () => {
   return gulp.src('./src/style/**/*.less')
+      .pipe(less())
     .pipe(gulp.dest('dist/style'));
 });
 

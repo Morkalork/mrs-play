@@ -5,11 +5,6 @@ var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
-var rimraf = require('rimraf');
-
-gulp.task('clean', () => {
-  rimraf('./dist/', {}, () => {});
-});
 
 gulp.task('html', () => {
   return gulp.src('./src/**/*.html')
@@ -44,4 +39,4 @@ gulp.task('style', () => {
     .pipe(gulp.dest('dist/style'));
 });
 
-gulp.task('default', ['clean', 'html', 'style', 'client-js', 'server-js']);
+gulp.task('default', ['html', 'style', 'client-js', 'server-js']);

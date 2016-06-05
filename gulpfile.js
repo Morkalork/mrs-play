@@ -13,7 +13,7 @@ gulp.task('html', () => {
 
 gulp.task('client-js', () => {
   return gulp.src('./src/js/**/*.js')
-    .pipe(gulp.dest('dist/js'));
+    .pipe(gulp.dest('dist/js/client'));
 });
 
 gulp.task('server-js', () => {
@@ -31,7 +31,7 @@ gulp.task('server-js', () => {
       .pipe(uglify())
       .on('error', console.log)
     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./dist/js/'));
+    .pipe(gulp.dest('./dist/js/server'));
 });
 
 gulp.task('style', () => {

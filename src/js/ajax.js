@@ -14,5 +14,12 @@ var ajax = {
     };
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
+  },
+  loadPage(pageName) {
+    var url = 'pages/' + pageName + '.html';
+    this.call(url, function(html){
+      var page = document.getElementById('page');
+      page.innerHTML = html;
+    });
   }
 };

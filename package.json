@@ -17,11 +17,17 @@
   },
   "homepage": "https://github.com/Morkalork/mrs-play#readme",
   "devDependencies": {
+    "browserify": "^13.0.1",
     "css-loader": "^0.23.1",
     "gulp": "^3.9.1",
     "gulp-less": "^3.1.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.3",
     "less-loader": "^2.2.3",
+    "rimraf": "^2.5.2",
     "style-loader": "^0.13.1",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
     "webpack": "^1.13.1"
   }
 }

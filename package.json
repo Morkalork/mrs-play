@@ -1,0 +1,27 @@
+{
+  "name": "mrs-play",
+  "version": "1.0.0",
+  "description": "A demo project for demo purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Morkalork/mrs-play.git"
+  },
+  "author": "Magnus Ferm <maffelu@gmail.com> (http://maffelu.net)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Morkalork/mrs-play/issues"
+  },
+  "homepage": "https://github.com/Morkalork/mrs-play#readme",
+  "devDependencies": {
+    "css-loader": "^0.23.1",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.1.0",
+    "less-loader": "^2.2.3",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1"
+  }
+}

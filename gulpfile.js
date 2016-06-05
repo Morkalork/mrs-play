@@ -1,10 +1,7 @@
 var gulp = require('gulp');
 var less = require('gulp-less');
-var browserify = require('browserify');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
-var uglify = require('gulp-uglify');
-var sourcemaps = require('gulp-sourcemaps');
+var rollup = require('gulp-rollup');
+var babel = require('rollup-plugin-babel');
 
 gulp.task('html', () => {
   return gulp.src('./src/**/*.html')
@@ -17,20 +14,14 @@ gulp.task('client-js', () => {
 });
 
 gulp.task('server-js', () => {
-  // set up the browserify instance on a task basis
-  var b = browserify({
-    entries: './src/server/server.js',
-    debug: true
-  });
 
-  return b.bundle()
-    .pipe(source('server.js'))
-    .pipe(buffer())
-    .pipe(sourcemaps.init({loadMaps: true}))
-    // Add transformation tasks to the pipeline here.
-      .pipe(uglify())
-      .on('error', console.log)
-    .pipe(sourcemaps.write('./'))
+  return gulp.src('./src/server/server.js', { read: false })
+    .pipe(rollup({
+      plugins: [babel({
+        presets: ["es2015-rollup"],
+        babelrc: false
+      })]
+    }))
     .pipe(gulp.dest('./dist/js/server'));
 });
 

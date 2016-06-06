@@ -4,7 +4,7 @@ var ajax = {
    * @param url The URL to where you want to make your ajax call
    * @param callback The action you want to take when the call returns
    */
-  call(url, callback){
+  call: function(url, callback){
     var xmlhttp;
     xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function () {
@@ -15,7 +15,7 @@ var ajax = {
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
   },
-  loadPage(pageName) {
+  loadPage: function(pageName) {
     var url = 'pages/' + pageName + '.html';
     this.call(url, function(html){
       var page = document.getElementById('page');

@@ -1,6 +1,7 @@
 # Our own
 node_modules
 dist
+.idea
 
 
 # Jetbrains horrid stuff

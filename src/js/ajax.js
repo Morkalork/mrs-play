@@ -15,11 +15,15 @@ var ajax = {
     xmlhttp.open("GET", url, true);
     xmlhttp.send();
   },
-  loadPage: function(pageName) {
+  loadPage: function(pageName, eventFunction) {
     var url = 'pages/' + pageName + '.html';
     this.call(url, function(html){
       var page = document.getElementById('page');
       page.innerHTML = html;
+      if(eventFunction)
+      {
+        eventFunction();
+      }
     });
   }
 };
